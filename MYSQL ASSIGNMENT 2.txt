@@ -1,0 +1,204 @@
+ASSIGNMENT 2
+
+Q1)
+create table Member(Member_Id INT,Member_Name VARCHAR(30),Member_Address VARCHAR(50),Acc_Open_Date DATE,Membership_Type VARCHAR(20),Fees_Paid DECIMAL(10,2),Max_Books_Allowed INT,Penalty_Amount DECIMAL(10,2));
+
+create table Books(Book_No INT,Book_Name VARCHAR(30),Author_Name VARCHAR(30),Cost DECIMAL(10,2),Category VARCHAR(15));
+
+create table Issue(Lib_Issue_Id INT,Book_No INT,Member_Id INT,Issue_Date DATE,Return_Date DATE);
+
+Q2)
+Desc Member;
+Desc Books;
+Desc Issue;
+
+Q3)
+drop table Member;
+
+Q4)
+alter table Member
+add primary key(Member_id);
+
+alter table Member 
+modify column
+
+CHECK(Membership_Type IN ('Lifetime','Annual','Half Yearly','Quarterly'));
+
+Q5)
+alter table Member
+modify column Member_Name VARCHAR(30));
+
+Q6)
+alter table Issue
+add Reference VARCHAR(30);
+
+Q7)
+alter table Issue
+Drop column Reference;
+
+Q8)
+alter table Issue
+Rename To Lib_Issue;
+
+Q9)
+Insert into Member
+values(1,'Richa Sharma','Pune','2005-12-10','Lifetime',25000,5,50),
+(2,'Garima Sen','Pune',CURRENT_DATE,'Annual',1000,3,NULL);
+
+Q10)
+Insert into Member
+values((3,'Amit Shah','Mumbai','2022-01-01','Annual',2000,4,0),
+(4,'Neha Patil','Nashik','2023-02-15','Quarterly',500,2,10),
+(5,'Rahul Jain','Delhi','2021-03-10','Lifetime',30000,6,0),
+(6,'Sneha Kulkarni','Pune','2020-07-20','Half Yearly',1500,3,20),
+(7,'Vikas Singh','Nagpur','2022-09-12','Annual',1200,3,0);
+
+
+Q11)
+alter table Member
+modify column Member_Name VARCHAR(20);
+
+Q12)
+alter table Member
+modify column Max_Books Allowed INT CHECK (Max_Books_Allowed < 100);
+
+Q13)
+create table MemberBackup AS
+SELECT * FROM Member;
+
+Q14)
+alter table Member
+modify column Max_Books Allowed INT CHECK (Max_Books_Allowed < 100);
+
+alter table Member
+modify column chk_penalty CHECK (Penalty_Amount<=1000);
+
+Q15)
+Drop table Books
+
+Q16)
+create table Books((Book_No INT,Book_Name VARCHAR(30),Author_Name VARCHAR(30),Cost DECIMAL(10,2),Category VARCHAR(15) CHECK (Category IN ('System','Fiction','Database','RDBMS','Others','Science'));
+
+
+alter table Books
+add PRIMARY KEY Book_NO
+
+alter table Books
+modify column Book_Name VARCHAR(30) NOT NULL;
+
+Q17)
+Insert into Books
+values(101,'Let Us C','Denis Ritchie',450,'System'),
+(102,'Oracle Complete Ref','Loni',550,'Database'),
+(103,'Mastering SQL','Loni',250,'Database'),
+(104,'PL SQL Ref','Scott Urman',750,'Database'),
+(105,'National Geographic','Adis Scott',1000,'Science');
+
+Q18)
+
+
+
+Q19)
+SELECT * FROM Member;
+SELECT * FROM Books;
+
+Q20)
+Drop Lib_issue table;
+
+Q21)
+CREATE TABLE Issue (
+    Lib_Issue_Id INT PRIMARY KEY,
+    Book_No INT,
+    Member_Id INT,
+    Issue_Date DATE,
+    Return_Date DATE,
+    FOREIGN KEY (Book_No) REFERENCES Books(Book_No),
+    FOREIGN KEY (Member_Id) REFERENCES Member(Member_Id)
+);
+
+Q22)
+Insert into Issue
+values(7001,101,1,'2024-12-10',
+       7002,102,2,'2024-12-25',
+       7003,104,1,'2025-01-15',
+       7004,101,1,'2025-02-04',
+       7005,104,2,'2025-03-15',
+       7006,101,3,'2025-04-18');
+
+Q23)
+forign key error when invalid Member_id
+ 
+Q24)
+Cannot delete parent row if child exists
+
+Q25)
+Upadte using DATE_ADD()
+
+Q26)
+Delete with condition
+
+Q27)
+cannot delete a parent row
+
+Q28)
+Drop all tables
+
+
+
+
+
+ 
+    Book_No INT,
+ ALTER TABLE Member
+    Book_No INT,
+ 
+
+
+
+Lib_Issue_Id INT,
+    Book_No INT,
+    Member_Id INT,
+    Issue_Date DATE,
+    Return_Date DATE
+);
+
+   
+
+ 
+
+
+
+
+
+
+
+CREATE TABLE Books (
+    Book_No INT,
+    Book_Name VARCHAR(30),
+    Author_Name VARCHAR(30),
+    Cost DECIMAL(10,2),
+    Category VARCHAR(15)
+);
+
+
+
+
+
+   
+    
+
+    Acc_Open_Date DATE,
+  
+    Acc_Open_Date DATE,
+  
+
+  
+    Member_Id INT,
+    Member_Name VARCHAR(30),
+    Member_Address VARCHAR(50),
+    Acc_Open_Date DATE,
+    Membership_Type VARCHAR(20),
+    Fees_Paid DECIMAL(10,2),
+    Max_Books_Allowed INT,
+    Penalty_Amount DECIMAL(10,2)
+);

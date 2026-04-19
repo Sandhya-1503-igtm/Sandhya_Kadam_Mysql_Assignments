@@ -1,0 +1,7 @@
+MYSQL ASSIGNMENT 4
+
+Q1)
+Select first_name as "First_Name"
+Select last_name as "Last_Name"
+
+Q2)
